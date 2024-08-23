@@ -6,12 +6,24 @@
  *****************************************************************************/
 #include "my_mpu6050.h"
 #include <math.h>
-
+#include <stdio.h>
 
 mpu_msg_t mpu_raw_msg;				//原始数据
 pose_msg_t mpu_pose_msg;			//姿态数据
 
 
+#ifdef __GNUC__ //检查是否使用 GNU 编译器。
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch) //重定向函数__io_putchar：字符发送到标准输出设备
+#else
+#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#endif
+/* USER CODE BEGIN 0 */
+PUTCHAR_PROTOTYPE {
+	//同样USART1改为你的串口
+	HAL_UART_Transmit(&huart1, (uint8_t*) &ch, 1, HAL_MAX_DELAY);
+	return ch;
+}
+/* USER CODE END 0 */
 
 
 /* ------------------------------------------------ 初始化mpu6050 ------------------------------------------------------------ */

@@ -40,8 +40,8 @@
 // #include "msp430.h"
 // #include "msp430_clock.h"
 #include "main.h"
-#include "stm32f4xx.h"
-#include "stm32f4xx_hal.h"
+#include "stm32f1xx.h"
+#include "stm32f1xx_hal.h"
 #include "i2c.h"
 #include "gpio.h"
 

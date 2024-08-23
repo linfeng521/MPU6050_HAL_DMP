@@ -50,11 +50,11 @@
 #include "inv_mpu.h"
 #include "inv_mpu_dmp_motion_driver.h"
 
-#include "stm32f4xx.h"
+#include "stm32f1xx.h"
 
 
-#define		MPU_I2C_HANDLE					hi2c2							//mpu6050   I2C句柄
-#define		MPU_I2C_GPIO_INIT				MX_I2C2_Init()		//mpu6050   I2C的gpio端口配置
+#define		MPU_I2C_HANDLE					hi2c1							//mpu6050   I2C句柄
+#define		MPU_I2C_GPIO_INIT				MX_I2C1_Init()		//mpu6050   I2C的gpio端口配置
 
 
 /* ------------------------------ 选择mpu6050的ADO引脚接法, 从而确定IIC地址 -------------------------------------------- */

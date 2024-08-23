@@ -51,7 +51,10 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+float Pitch;
+float Roll;
+float Yaw;
+int temp;
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -90,13 +93,55 @@ int main(void)
   MX_I2C1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+	while(w_mpu_init() != mpu_ok)
+  {
+	  //printf("0x%x (ID_ERROR)\r\n", w_mpu_init());
+		// printf("a%.1fb%.1fc%.1f",mpu_pose_msg.pitch,mpu_pose_msg.roll,mpu_pose_msg.yaw);
+	  HAL_Delay(100);
+  }
+	dmp_init();		//dmp初始化
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+		read_dmp(&mpu_pose_msg);//读取mpu姿态
+		w_mpu_read_all_raw_data(&mpu_raw_msg); //读取mpu6050有原始数据mpu_raw_msg.mpu_acce[0]
+
+//******************************************原始数据读取********************************************************************************
+//	  OLED_ShowString(0,3,"Ax:");
+//	  OLED_ShowFloat(mpu_raw_msg.mpu_acce[0], 1, 20, 0);//XYZ轴加速度�?????????
+//	  OLED_ShowString(0,18,"Ay:");
+//	  OLED_ShowFloat(mpu_raw_msg.mpu_acce[1], 1, 20, 15);
+//	  OLED_ShowString(0,33,"Az:");
+//	  OLED_ShowFloat(mpu_raw_msg.mpu_acce[2], 1, 20, 30);
+
+
+
+//	  OLED_ShowString(0,3,"Gx:");
+//	  OLED_ShowFloat(mpu_raw_msg.mpu_gyro[0], 1, 20, 0);//XYZ轴陀螺仪�?????????
+//	  OLED_ShowString(0,18,"Gy:");
+//	  OLED_ShowFloat(mpu_raw_msg.mpu_gyro[1], 1, 20, 15);
+//	  OLED_ShowString(0,33,"Gz:");
+//	  OLED_ShowFloat(mpu_raw_msg.mpu_gyro[2], 1, 20, 30);
+//
+
+
+
+//******************************************DMP解算值********************************************************************************
+//	  OLED_ShowString(0,3,"Pitch:");
+//	  OLED_ShowFloat(mpu_pose_msg.pitch, 1, 50, 0);//XYZ轴陀螺仪�?????????
+//	  OLED_ShowString(0,18,"Roll:");
+//	  OLED_ShowFloat(mpu_pose_msg.roll, 1, 50, 15);
+//	  OLED_ShowString(0,33,"Yaw:");
+//	  OLED_ShowFloat(mpu_pose_msg.yaw, 1, 50, 30);
+
+//	  OLED_ShowString(0,48,"Temp:");
+//	  OLED_ShowFloat(mpu_raw_msg.mpu_temperature, 1, 50, 45);//温度
+//  	HAL_Delay(100);
+//  	OLED_Refresh_Gram();
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

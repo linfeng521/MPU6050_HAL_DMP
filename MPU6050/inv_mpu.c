@@ -48,15 +48,15 @@ void get_ms(unsigned long *count){};
 // #include "msp430_interrupt.h"
 
 #include "main.h"
-#include "stm32f4xx.h"
-#include "stm32f4xx_hal.h"
+#include "stm32f1xx.h"
+#include "stm32f1xx_hal.h"
 #include "i2c.h"
 #include "gpio.h"
 
-#define i2c_write   i2c2_write
-#define i2c_read    i2c2_read
+#define i2c_write(dev_addr, reg_addr, data_size, p_data)   HAL_I2C_Mem_Write(&hi2c1, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, p_data, data_size, 0xF)
+#define i2c_read(dev_addr, reg_addr, data_size, p_data)   HAL_I2C_Mem_Read(&hi2c1, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, p_data, data_size, 0xF) 
 #define delay_ms    HAL_Delay
-#define get_ms      get_ms
+#define get_ms(p)   do{ *p = HAL_GetTick();}while(0)
 
 //static inline int reg_int_cb(struct int_param_s *int_param)
 //{
