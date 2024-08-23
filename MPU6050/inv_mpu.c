@@ -36,18 +36,20 @@
  * fabsf(float x)
  * min(int a, int b)
  */
-#if defined EMPL_TARGET_STM32F4
-#include "i2c.h"   
-#include "main.h"
-#include "log.h"
-#include "board-st_discovery.h"
-   
-#define i2c_write   Sensors_I2C_WriteRegister
-#define i2c_read    Sensors_I2C_ReadRegister 
-#define delay_ms    mdelay
-#define get_ms      get_tick_count
-#define log_i       MPL_LOGI
-#define log_e       MPL_LOGE
+#if defined STM32_MPU6050
+#include "stm32f1xx.h"
+#include "stm32f1xx_hal.h"
+#include "i2c.h"
+#include "gpio.h"
+#define i2c_write(dev_addr, reg_addr, data_size, p_data)   HAL_I2C_Mem_Write(&hi2c1, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, p_data, data_size, 0xF)
+#define i2c_read(dev_addr, reg_addr, data_size, p_data)   HAL_I2C_Mem_Read(&hi2c1, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, p_data, data_size, 0xF) 
+#define delay_ms    HAL_Delay
+#define get_ms(p)   do{ *p = HAL_GetTick();}while(0)
+
+#define log_i     printf
+#define log_e     printf
+
+#define fabs        fabsf
 #define min(a,b) ((a<b)?a:b)
    
 #elif defined MOTION_DRIVER_TARGET_MSP430
@@ -771,10 +773,10 @@ int mpu_init(struct int_param_s *int_param)
     if (mpu_configure_fifo(0))
         return -1;
 
-#ifndef EMPL_TARGET_STM32F4    
-    if (int_param)
-        reg_int_cb(int_param);
-#endif
+//#ifndef EMPL_TARGET_STM32F4    
+//    if (int_param)
+//        reg_int_cb(int_param);
+//#endif
 
 #ifdef AK89xx_SECONDARY
     setup_compass();
