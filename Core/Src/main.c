@@ -24,7 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"//别忘了它
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,7 +45,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+int ret = 0;
+float pitch,roll,yaw;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -57,7 +58,19 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+#ifdef __GNUC__ //检查是否使用 GNU 编译器。
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch) //重定向函数__io_putchar：字符发送到标准输出设备
+#else
+#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#endif
+/* USER CODE BEGIN 0 */
+PUTCHAR_PROTOTYPE {
+	//同样USART1改为你的串口
+	HAL_UART_Transmit(&huart1, (uint8_t*) &ch, 1, HAL_MAX_DELAY);
+	return ch;
+}
 /* USER CODE END 0 */
+
 
 /**
   * @brief  The application entry point.
@@ -66,7 +79,7 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -90,13 +103,23 @@ int main(void)
   MX_I2C1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+	do
+	{
+		ret = MPU6050_DMP_init();
+		printf("MPU6050 init, ret = %d\r\n",ret);
+		HAL_Delay(1000);
+	}while(ret);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+		if(MPU6050_DMP_Get_Date(&pitch, &roll, &yaw) == 0)
+		{
+			printf("yaw = %f, roll = %f, pitch =%f\r\n", yaw, roll, pitch);
+		}
+		HAL_Delay(100);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

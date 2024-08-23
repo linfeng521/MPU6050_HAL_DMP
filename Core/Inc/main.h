@@ -31,7 +31,11 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "dmpKey.h"
+#include "dmpmap.h"
+#include "inv_mpu_dmp_motion_driver.h"
+#include "inv_mpu.h"
+#include "my_mpu6050.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
