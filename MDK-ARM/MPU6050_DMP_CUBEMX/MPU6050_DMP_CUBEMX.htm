@@ -3,7 +3,7 @@
 <title>Static Call Graph - [MPU6050_DMP_CUBEMX\MPU6050_DMP_CUBEMX.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image MPU6050_DMP_CUBEMX\MPU6050_DMP_CUBEMX.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6210000: Last Updated: Fri Aug 23 15:22:17 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6210000: Last Updated: Fri Aug 23 15:45:38 2024
 <BR><P>
 <H3>Maximum Stack Usage =        584 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1366,7 +1366,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[bc]"></a>mpu_configure_fifo</STRONG> (Thumb, 198 bytes, Stack size 40 bytes, inv_mpu.o(.text.mpu_configure_fifo))
+<P><STRONG><a name="[bc]"></a>mpu_configure_fifo</STRONG> (Thumb, 204 bytes, Stack size 40 bytes, inv_mpu.o(.text.mpu_configure_fifo))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = mpu_configure_fifo &rArr; mpu_reset_fifo &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_reset_fifo
@@ -1391,7 +1391,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_self_test
 </UL>
 
-<P><STRONG><a name="[ba]"></a>mpu_init</STRONG> (Thumb, 392 bytes, Stack size 48 bytes, inv_mpu.o(.text.mpu_init))
+<P><STRONG><a name="[ba]"></a>mpu_init</STRONG> (Thumb, 404 bytes, Stack size 48 bytes, inv_mpu.o(.text.mpu_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = mpu_init &rArr; mpu_set_sample_rate &rArr; mpu_lp_accel_mode &rArr; mpu_configure_fifo &rArr; mpu_reset_fifo &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_set_sensors
@@ -1405,7 +1405,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU6050_DMP_init
 </UL>
 
-<P><STRONG><a name="[ce]"></a>mpu_load_firmware</STRONG> (Thumb, 446 bytes, Stack size 88 bytes, inv_mpu.o(.text.mpu_load_firmware))
+<P><STRONG><a name="[ce]"></a>mpu_load_firmware</STRONG> (Thumb, 454 bytes, Stack size 88 bytes, inv_mpu.o(.text.mpu_load_firmware))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = mpu_load_firmware &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
@@ -1415,7 +1415,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dmp_load_motion_driver_firmware
 </UL>
 
-<P><STRONG><a name="[dc]"></a>mpu_lp_accel_mode</STRONG> (Thumb, 654 bytes, Stack size 40 bytes, inv_mpu.o(.text.mpu_lp_accel_mode))
+<P><STRONG><a name="[dc]"></a>mpu_lp_accel_mode</STRONG> (Thumb, 666 bytes, Stack size 40 bytes, inv_mpu.o(.text.mpu_lp_accel_mode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = mpu_lp_accel_mode &rArr; mpu_configure_fifo &rArr; mpu_reset_fifo &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_configure_fifo
@@ -1424,7 +1424,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_set_sample_rate
 </UL>
 
-<P><STRONG><a name="[cf]"></a>mpu_read_fifo_stream</STRONG> (Thumb, 242 bytes, Stack size 48 bytes, inv_mpu.o(.text.mpu_read_fifo_stream))
+<P><STRONG><a name="[cf]"></a>mpu_read_fifo_stream</STRONG> (Thumb, 246 bytes, Stack size 48 bytes, inv_mpu.o(.text.mpu_read_fifo_stream))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = mpu_read_fifo_stream &rArr; mpu_reset_fifo &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_reset_fifo
@@ -1433,7 +1433,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dmp_read_fifo
 </UL>
 
-<P><STRONG><a name="[cd]"></a>mpu_reset_fifo</STRONG> (Thumb, 508 bytes, Stack size 40 bytes, inv_mpu.o(.text.mpu_reset_fifo))
+<P><STRONG><a name="[cd]"></a>mpu_reset_fifo</STRONG> (Thumb, 528 bytes, Stack size 40 bytes, inv_mpu.o(.text.mpu_reset_fifo))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = mpu_reset_fifo &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
@@ -1446,7 +1446,7 @@ Global Symbols
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_configure_fifo
 </UL>
 
-<P><STRONG><a name="[dd]"></a>mpu_run_self_test</STRONG> (Thumb, 2408 bytes, Stack size 144 bytes, inv_mpu.o(.text.mpu_run_self_test))
+<P><STRONG><a name="[dd]"></a>mpu_run_self_test</STRONG> (Thumb, 2420 bytes, Stack size 144 bytes, inv_mpu.o(.text.mpu_run_self_test))
 <BR><BR>[Stack]<UL><LI>Max Depth = 440<LI>Call Chain = mpu_run_self_test &rArr; mpu_set_dmp_state &rArr; mpu_set_sample_rate &rArr; mpu_lp_accel_mode &rArr; mpu_configure_fifo &rArr; mpu_reset_fifo &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_set_dmp_state
@@ -1468,7 +1468,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_self_test
 </UL>
 
-<P><STRONG><a name="[da]"></a>mpu_set_bypass</STRONG> (Thumb, 302 bytes, Stack size 32 bytes, inv_mpu.o(.text.mpu_set_bypass))
+<P><STRONG><a name="[da]"></a>mpu_set_bypass</STRONG> (Thumb, 310 bytes, Stack size 32 bytes, inv_mpu.o(.text.mpu_set_bypass))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = mpu_set_bypass &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
@@ -1479,7 +1479,7 @@ Global Symbols
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_init
 </UL>
 
-<P><STRONG><a name="[c4]"></a>mpu_set_dmp_state</STRONG> (Thumb, 312 bytes, Stack size 40 bytes, inv_mpu.o(.text.mpu_set_dmp_state))
+<P><STRONG><a name="[c4]"></a>mpu_set_dmp_state</STRONG> (Thumb, 320 bytes, Stack size 40 bytes, inv_mpu.o(.text.mpu_set_dmp_state))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = mpu_set_dmp_state &rArr; mpu_set_sample_rate &rArr; mpu_lp_accel_mode &rArr; mpu_configure_fifo &rArr; mpu_reset_fifo &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_reset_fifo
@@ -1491,7 +1491,7 @@ Global Symbols
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU6050_DMP_init
 </UL>
 
-<P><STRONG><a name="[d9]"></a>mpu_set_lpf</STRONG> (Thumb, 176 bytes, Stack size 24 bytes, inv_mpu.o(.text.mpu_set_lpf))
+<P><STRONG><a name="[d9]"></a>mpu_set_lpf</STRONG> (Thumb, 180 bytes, Stack size 24 bytes, inv_mpu.o(.text.mpu_set_lpf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = mpu_set_lpf &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
@@ -1499,7 +1499,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_init
 </UL>
 
-<P><STRONG><a name="[bd]"></a>mpu_set_sample_rate</STRONG> (Thumb, 248 bytes, Stack size 32 bytes, inv_mpu.o(.text.mpu_set_sample_rate))
+<P><STRONG><a name="[bd]"></a>mpu_set_sample_rate</STRONG> (Thumb, 254 bytes, Stack size 32 bytes, inv_mpu.o(.text.mpu_set_sample_rate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = mpu_set_sample_rate &rArr; mpu_lp_accel_mode &rArr; mpu_configure_fifo &rArr; mpu_reset_fifo &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_lp_accel_mode
@@ -1511,7 +1511,7 @@ Global Symbols
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU6050_DMP_init
 </UL>
 
-<P><STRONG><a name="[bb]"></a>mpu_set_sensors</STRONG> (Thumb, 294 bytes, Stack size 40 bytes, inv_mpu.o(.text.mpu_set_sensors))
+<P><STRONG><a name="[bb]"></a>mpu_set_sensors</STRONG> (Thumb, 300 bytes, Stack size 40 bytes, inv_mpu.o(.text.mpu_set_sensors))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = mpu_set_sensors &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
@@ -1522,7 +1522,7 @@ Global Symbols
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU6050_DMP_init
 </UL>
 
-<P><STRONG><a name="[cb]"></a>mpu_write_mem</STRONG> (Thumb, 132 bytes, Stack size 40 bytes, inv_mpu.o(.text.mpu_write_mem))
+<P><STRONG><a name="[cb]"></a>mpu_write_mem</STRONG> (Thumb, 134 bytes, Stack size 40 bytes, inv_mpu.o(.text.mpu_write_mem))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = mpu_write_mem &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
@@ -2130,7 +2130,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
 </UL>
 
-<P><STRONG><a name="[d7]"></a>get_st_biases</STRONG> (Thumb, 1072 bytes, Stack size 72 bytes, inv_mpu.o(.text.get_st_biases))
+<P><STRONG><a name="[d7]"></a>get_st_biases</STRONG> (Thumb, 1100 bytes, Stack size 72 bytes, inv_mpu.o(.text.get_st_biases))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = get_st_biases &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read

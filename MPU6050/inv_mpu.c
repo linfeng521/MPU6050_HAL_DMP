@@ -41,8 +41,8 @@
 #include "stm32f1xx_hal.h"
 #include "i2c.h"
 #include "gpio.h"
-#define i2c_write(dev_addr, reg_addr, data_size, p_data)   HAL_I2C_Mem_Write(&hi2c1, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, p_data, data_size, 0xF)
-#define i2c_read(dev_addr, reg_addr, data_size, p_data)   HAL_I2C_Mem_Read(&hi2c1, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, p_data, data_size, 0xF) 
+#define i2c_write(dev_addr, reg_addr, data_size, p_data)   HAL_I2C_Mem_Write(&hi2c1, (dev_addr) << 1, reg_addr, I2C_MEMADD_SIZE_8BIT, p_data, data_size, 0xF)
+#define i2c_read(dev_addr, reg_addr, data_size, p_data)   HAL_I2C_Mem_Read(&hi2c1, (dev_addr) << 1, reg_addr, I2C_MEMADD_SIZE_8BIT, p_data, data_size, 0xF) 
 #define delay_ms    HAL_Delay
 #define get_ms(p)   do{ *p = HAL_GetTick();}while(0)
 

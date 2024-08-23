@@ -31,4 +31,6 @@ mpu6050_dmp_cubemx/inv_mpu.o: ..\MPU6050\inv_mpu.c \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
-  ..\Core\Inc\i2c.h ..\Core\Inc\main.h ..\Core\Inc\gpio.h
+  ..\Core\Inc\i2c.h ..\Core\Inc\main.h ..\MPU6050\dmpKey.h \
+  ..\MPU6050\dmpmap.h ..\MPU6050\inv_mpu_dmp_motion_driver.h \
+  ..\MPU6050\my_mpu6050.h ..\Core\Inc\gpio.h
