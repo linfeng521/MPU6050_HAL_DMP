@@ -21,7 +21,7 @@
 #include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
-
+#include <stdio.h>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -95,8 +95,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	while(w_mpu_init() != mpu_ok)
   {
-	  //printf("0x%x (ID_ERROR)\r\n", w_mpu_init());
-		// printf("a%.1fb%.1fc%.1f",mpu_pose_msg.pitch,mpu_pose_msg.roll,mpu_pose_msg.yaw);
+	  printf("0x%x (ID_ERROR)\r\n", w_mpu_init());
+		printf("a%.1fb%.1fc%.1f",mpu_pose_msg.pitch,mpu_pose_msg.roll,mpu_pose_msg.yaw);
 	  HAL_Delay(100);
   }
 	dmp_init();		//dmp初始化
@@ -108,7 +108,11 @@ int main(void)
   {
 		read_dmp(&mpu_pose_msg);//读取mpu姿态
 		w_mpu_read_all_raw_data(&mpu_raw_msg); //读取mpu6050有原始数据mpu_raw_msg.mpu_acce[0]
-
+		printf("Pitch: %f\t ", mpu_pose_msg.pitch);
+		printf("Roll:  %f\t ", mpu_pose_msg.roll);
+		printf("Yaw:   %f\t ", mpu_pose_msg.yaw);
+		printf("\r\n");
+		HAL_Delay(100);
 //******************************************原始数据读取********************************************************************************
 //	  OLED_ShowString(0,3,"Ax:");
 //	  OLED_ShowFloat(mpu_raw_msg.mpu_acce[0], 1, 20, 0);//XYZ轴加速度�?????????
