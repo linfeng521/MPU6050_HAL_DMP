@@ -25,7 +25,7 @@
 "mpu6050_dmp_cubemx\inv_mpu.o"
 "mpu6050_dmp_cubemx\inv_mpu_dmp_motion_driver.o"
 "mpu6050_dmp_cubemx\my_mpu6050.o"
---strict --scatter "MPU6050_DMP_CUBEMX\MPU6050_DMP_CUBEMX.sct"
+--library_type=microlib --strict --scatter "MPU6050_DMP_CUBEMX\MPU6050_DMP_CUBEMX.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "MPU6050_DMP_CUBEMX.map" -o MPU6050_DMP_CUBEMX\MPU6050_DMP_CUBEMX.axf

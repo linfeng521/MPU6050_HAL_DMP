@@ -58,7 +58,7 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-#ifdef __GNUC__ //检查是否使用 GNU 编译器。
+#ifdef __GNUC__ //�?查是否使�? GNU 编译器�??
 #define PUTCHAR_PROTOTYPE int __io_putchar(int ch) //重定向函数__io_putchar：字符发送到标准输出设备
 #else
 #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
@@ -71,13 +71,13 @@ PUTCHAR_PROTOTYPE {
 }
 /* USER CODE END 0 */
 
-
 /**
   * @brief  The application entry point.
   * @retval int
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 	
   /* USER CODE END 1 */
@@ -103,22 +103,25 @@ int main(void)
   MX_I2C1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-	do
-	{
-		ret = MPU6050_DMP_init();
-		printf("MPU6050 init, ret = %d\r\n",ret);
-		HAL_Delay(1000);
-	}while(ret);
+while(w_mpu_init() != mpu_ok)
+  {
+	  printf("0x%x (ID_ERROR)\r\n", w_mpu_init());
+		printf("a%.1fb%.1fc%.1f",mpu_pose_msg.pitch,mpu_pose_msg.roll,mpu_pose_msg.yaw);
+	  HAL_Delay(100);
+  }
+	dmp_init();		//dmp��ʼ��
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		if(MPU6050_DMP_Get_Date(&pitch, &roll, &yaw) == 0)
-		{
-			printf("yaw = %f, roll = %f, pitch =%f\r\n", yaw, roll, pitch);
-		}
+		read_dmp(&mpu_pose_msg);//��ȡmpu��̬
+		w_mpu_read_all_raw_data(&mpu_raw_msg); //��ȡmpu6050��ԭʼ����mpu_raw_msg.mpu_acce[0]
+		printf("Pitch: %f\t ", mpu_pose_msg.pitch);
+		printf("Roll:  %f\t ", mpu_pose_msg.roll);
+		printf("Yaw:   %f\t ", mpu_pose_msg.yaw);
+		printf("\r\n");
 		HAL_Delay(100);
     /* USER CODE END WHILE */
 

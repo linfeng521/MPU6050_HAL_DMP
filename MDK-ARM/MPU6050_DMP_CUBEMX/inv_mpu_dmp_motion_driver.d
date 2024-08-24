@@ -1,37 +1,37 @@
 mpu6050_dmp_cubemx/inv_mpu_dmp_motion_driver.o: \
-  ..\MPU6050\inv_mpu_dmp_motion_driver.c \
-  D:\Keil5\ARM\ARMCLANG\include\stdio.h \
-  D:\Keil5\ARM\ARMCLANG\include\stdint.h \
-  D:\Keil5\ARM\ARMCLANG\include\stdlib.h \
-  D:\Keil5\ARM\ARMCLANG\include\string.h \
-  D:\Keil5\ARM\ARMCLANG\include\math.h ..\MPU6050\inv_mpu.h \
-  ..\MPU6050\inv_mpu_dmp_motion_driver.h ..\MPU6050\dmpKey.h \
-  ..\MPU6050\dmpmap.h \
-  ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h \
-  ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h \
-  ..\Drivers\CMSIS\Include\core_cm3.h \
-  D:\CubeMXCode\MPU6050_DMP_CUBEMX\Drivers\CMSIS\Include\cmsis_version.h \
-  D:\CubeMXCode\MPU6050_DMP_CUBEMX\Drivers\CMSIS\Include\cmsis_compiler.h \
-  D:\CubeMXCode\MPU6050_DMP_CUBEMX\Drivers\CMSIS\Include\cmsis_armclang.h \
-  D:\Keil5\ARM\ARMCLANG\include\arm_compat.h \
-  D:\Keil5\ARM\ARMCLANG\include\arm_acle.h \
-  ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h \
-  ..\Core\Inc\stm32f1xx_hal_conf.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
-  D:\Keil5\ARM\ARMCLANG\include\stddef.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
-  ..\Core\Inc\i2c.h ..\Core\Inc\main.h ..\MPU6050\my_mpu6050.h
+  ../MPU6050/inv_mpu_dmp_motion_driver.c \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h ../MPU6050/inv_mpu.h \
+  ../MPU6050/inv_mpu_dmp_motion_driver.h ../MPU6050/dmpKey.h \
+  ../MPU6050/dmpmap.h \
+  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h \
+  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h \
+  ../Drivers/CMSIS/Include\core_cm3.h \
+  ../Drivers/CMSIS/Include/cmsis_version.h \
+  ../Drivers/CMSIS/Include/cmsis_compiler.h \
+  ../Drivers/CMSIS/Include/cmsis_armclang.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
+  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal.h \
+  ../Core/Inc\stm32f1xx_hal_conf.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_rcc.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_gpio.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_exti.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_dma.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_cortex.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_flash.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_i2c.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_pwr.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_uart.h \
+  ../Core/Inc\i2c.h ../Core/Inc/main.h ../MPU6050\my_mpu6050.h \
+  ../Core/Inc\main.h ../Core/Inc\usart.h
